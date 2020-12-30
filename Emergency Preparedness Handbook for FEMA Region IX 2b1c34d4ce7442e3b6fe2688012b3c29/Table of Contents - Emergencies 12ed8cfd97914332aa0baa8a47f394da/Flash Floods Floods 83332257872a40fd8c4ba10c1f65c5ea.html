@@ -1,0 +1,627 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Flash Floods / Floods</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="83332257-872a-40fd-8c4b-a10c1f65c5ea" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="Flash%20Floods%20Floods%2083332257872a40fd8c4ba10c1f65c5ea/Flood.png"/></div><h1 class="page-title">Flash Floods / Floods</h1><table class="properties"><tbody><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M9.625,10.8465 C8.91187,10.2891 8.12088,9.926 7,9.26013 L7,8.71938 C7.21175,8.47612 7.392,8.176 7.53813,7.83213 C7.94587,7.7315 8.3125,7.33425 8.3125,7 C8.3125,6.51788 8.1095,6.32713 7.8715,6.17137 C7.8715,6.15562 7.875,6.14162 7.875,6.125 C7.875,5.41362 7.4375,3.5 5.25,3.5 C3.0625,3.5 2.625,5.4145 2.625,6.125 C2.625,6.14162 2.6285,6.15562 2.6285,6.17137 C2.3905,6.32713 2.1875,6.51788 2.1875,7 C2.1875,7.33425 2.55413,7.7315 2.96187,7.833 C3.108,8.176 3.28825,8.47612 3.5,8.71938 L3.5,9.26013 C2.37912,9.92513 1.58812,10.2882 0.875,10.8465 C0.041125,11.4984 0,12.4688 0,14 L10.5,14 C10.5,12.4688 10.4589,11.4984 9.625,10.8465 Z M13.125,7.3465 C12.4119,6.78912 11.6209,6.426 10.5,5.76013 L10.5,5.21938 C10.7118,4.97613 10.892,4.676 11.0381,4.33213 C11.4459,4.2315 11.8125,3.83425 11.8125,3.5 C11.8125,3.01787 11.6095,2.82713 11.3715,2.67138 C11.3715,2.65562 11.375,2.64162 11.375,2.625 C11.375,1.91363 10.9375,0 8.75,0 C6.5625,0 6.125,1.9145 6.125,2.625 C6.125,2.64162 6.1285,2.65562 6.1285,2.67138 C6.11188,2.68275 6.09787,2.69588 6.08125,2.70725 C7.83212,3.066 8.59688,4.54825 8.72813,5.74787 C8.97575,6.00863 9.1875,6.39625 9.1875,7 C9.1875,7.60288 8.771,8.20312 8.18388,8.51462 C8.127,8.624 8.06662,8.729 8.00275,8.82962 C8.155,8.91537 8.30025,8.99675 8.44025,9.07463 C9.08075,9.4325 9.63375,9.74137 10.164,10.1561 C10.3022,10.2638 10.4204,10.3801 10.5289,10.4991 L14,10.4991 C14,8.96875 13.9589,7.99837 13.125,7.3465 Z"></path></svg></span>Author</th><td><span class="user"><img src="Flash%20Floods%20Floods%2083332257872a40fd8c4ba10c1f65c5ea/HEADSHOT.jpg" class="icon user-icon"/>Juliana Carrillo</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Property</th><td></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Source 1</th><td><a href="https://www.weather.gov/phi/FlashFloodingDefinition">https://www.weather.gov/phi/FlashFloodingDefinition</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Source 2</th><td><a href="https://www.weather.gov/jetstream/flood">https://www.weather.gov/jetstream/flood</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Source 3</th><td><a href="https://www.nssl.noaa.gov/education/svrwx101/floods/">https://www.nssl.noaa.gov/education/svrwx101/floods/</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Source 4</th><td><a href="https://www.nationalgeographic.org/encyclopedia/runoff/">https://www.nationalgeographic.org/encyclopedia/runoff/</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Source 5</th><td><a href="https://www.ready.gov/floods">https://www.ready.gov/floods</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Source 6</th><td><a href="https://www.noaa.gov/">https://www.noaa.gov/</a></td></tr></tbody></table></header><div class="page-body"><h1 id="9a7c7616-fc7a-4fb6-bf20-e9733e45781d" class="">What are Flash Floods?</h1><p id="144d8325-27cf-440a-b81b-7de70e5a8da5" class="">According to <a href="http://weather.gov">weather.gov</a>, flash floods are floods that can occur suddenly, or within a 3 to 6 hour time frame. They&#x27;re often caused by the heavy rainfall that comes with thunderstorms, and the quickness of a flash flood can change depending on the geography of the area.</p><p id="f0133d52-503d-44b8-a0d8-51302a1842fd" class="">According to <a href="http://ready.gov">ready.gov</a>, floods can also occur slowly. They can result from snow, rain, storms, and overflow in water systems.</p><figure id="639de08a-d6d9-41b0-94bc-0b131d249fcf" class="image"><a href="https://images.unsplash.com/photo-1545276070-ec815f01c6ec?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"><img src="https://images.unsplash.com/photo-1545276070-ec815f01c6ec?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"/></a><figcaption>Photo by Chris Gallagher, Unsplash, <a href="https://unsplash.com/photos/0PHUAtg_2CQ">https://unsplash.com/photos/0PHUAtg_2CQ</a></figcaption></figure><hr id="e805df64-85db-4e9d-bc89-80ef16d25582"/><h1 id="a5a6d926-d6da-4003-81b5-45ae9f432ee4" class="">Where do Floods Occur in Region IX?</h1><p id="d89f1cf5-2142-4e2c-b93e-970e26f30384" class="">According to The National Severe Storms Laboratory, flash floods occur in every region and territory in the United States. Even though flash flooding can occur anywhere, certain areas are more prone to flash flooding than others. For instance, urban areas are more prone to flash floods than country or suburban areas due to water being unable to soak into the ground. Floods also occur around rivers, creeks, or other bodies of water.  Areas that have <a href="Dust%20Storms%2066254d9941744b779eb5cd35ade01af3.html"><span class="icon">💨</span>Dust Storms</a> will have drier soil and thunderstorms, to which the dry soil will act as runoff for the water, thus, flooding. In places such as <a href="../Table%20of%20Contents%20-%20Regions%2007e6b883481742f283e7ffb128998540/Arizona%20f515e577e34e4eb581ef1190508b7b96.html"><img class="icon" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojipedia/102/flag-for-arizona-usaz_1f3f4-e0075-e0073-e0061-e007a-e007f.png"/>Arizona</a>, <a href="../Table%20of%20Contents%20-%20Regions%2007e6b883481742f283e7ffb128998540/California%2044401fd00c9e4df285985de1f50409d8.html"><img class="icon" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojipedia/132/flag-for-california-usca_1f3f4-e0075-e0073-e0063-e0061-e007f.png"/>California</a>, and <a href="../Table%20of%20Contents%20-%20Regions%2007e6b883481742f283e7ffb128998540/Nevada%203dcfb76eb4a942229111038269878bfe.html"><img class="icon" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojipedia/132/flag-for-nevada-usnv_1f3f4-e0075-e0073-e006e-e0076-e007f.png"/>Nevada</a>, the dry soil in canyons and dried up rivers or arroyos can cause runoff.  Runoff, according to National Geographic, is where there is more water than that could be absorbed by the land.</p><hr id="b08d5299-f321-4615-a56b-4aad1447af04"/><h1 id="6911182c-a17a-4f6f-b0f7-8145d54308da" class="">What makes Floods Dangerous?</h1><p id="d4216ba1-0303-4b16-a0bd-1fc8fbdc2eca" class="">According <a href="http://weather.gov">weather.gov</a>, other than deaths related to <a href="Severe%20Heat%209105207343304d6982f7af105c1a2300.html"><span class="icon">☀️</span>Severe Heat</a> , most deaths are associated with floods. Most of these deaths occur in vehicles. People can get trapped in their vehicles in the high rising waters, and the powerful waters can cause the vehicles to be washed downstream. People can also drive their vehicles into flooded areas and around barriers and become trapped.</p><p id="0e115f9a-ed37-424e-a800-6dfe31f4c401" class="">Densely populated areas with freeways, highways, roads, and buildings have a higher potential for flash flooding since the water can&#x27;t be absorbed into the ground, thus increasing runoff. The excess amount of water can pose as a danger to densely populated areas, especially in places such as:</p><ul id="2f129944-ed34-466a-8acd-c4e568ec7bab" class="bulleted-list"><li>Underground parking garages</li></ul><ul id="98ba36f0-cc96-4da5-9e68-a3180a884a9d" class="bulleted-list"><li>Underpasses</li></ul><ul id="a3e29701-ff01-4b7d-bf7e-847f26e54e82" class="bulleted-list"><li>Basements</li></ul><p id="57501f48-20c7-4aa0-bcb9-365686149682" class="">In places with dry soil and canyons, hikers, residents, and other lifeforms nearby can be trapped by fast moving and rising water. Downstream motion of the water in canyons can also lead to fast moving debris, which can be just as dangerous as the water itself.</p><p id="85953207-395b-4d6a-915b-1cdd3d1fd82d" class="">Floods can also cause outages, create <a href="Landslides%203aa4c27640614f27ade1f5c1a91daf35.html"><img class="icon" src="https://webstockreview.net/images/driving-clipart-svg-14.png"/>Landslides</a>, cause issues with transportation, and damage building.</p><hr id="0ed19f64-7a0d-4fa7-b712-6677edcb4edd"/><h1 id="37bf993e-592a-4687-a733-6d3b5956dfc2" class="">How Can You <mark class="highlight-orange">Prepare </mark>For a Flood?</h1><p id="44b485b0-adb3-4364-82f0-c06d8965e4eb" class="">Be ready:</p><ul id="ee8ef817-951c-47df-b27a-f81c23f763d1" class="bulleted-list"><li>Make a plan with your family (know where to go, what to do, what to bring).</li></ul><ul id="c4721286-dc20-4dc2-8bfc-fa7d8fc928f4" class="bulleted-list"><li>Gather supplies that you will need in the event of an evacuation, and keep it accessible.</li></ul><ul id="d8220e64-d036-448d-90b6-3732180b9c0b" class="bulleted-list"><li>Keep important documents and valuables on a higher level or floor and in waterproof containers.</li></ul><ul id="630b7b2d-c703-42ba-910b-523899acbe48" class="bulleted-list"><li>Talk with your insurance to find out what is covered in the event of a flood. Consider purchasing/renewing a flood insurance policy.</li></ul><p id="02cda0b6-a3d9-43d6-9070-5943899bfad3" class="">Keep up to date and know the risk:</p><ul id="e0d85ade-4c01-46a7-916f-c208a9adf127" class="bulleted-list"><li>Sign up for <a href="https://www.fema.gov/emergency-managers/practitioners/integrated-public-alert-warning-system/public/emergency-alert-system">Emergency Alerts</a> and alerts from the <a href="https://www.noaa.gov/">National Oceanic and Atmospheric Administration</a>.</li></ul><ul id="2321fb38-e1a5-4493-a2f2-b53f3af09cd6" class="bulleted-list"><li>Be aware of the weather and monitor the possible risk of flooding in your area.</li></ul><ul id="8a0364c4-6a0d-4363-9d8f-8eefb8db0edb" class="bulleted-list"><li>Be aware of any alerts in your area.</li></ul><hr id="4cacced1-23de-454d-8001-545333177986"/><h1 id="5ff0ed99-9364-4367-9c6f-a5d7d60ff2d0" class="">What Can You Do <mark class="highlight-orange">During </mark>a Flood?</h1><p id="b74d6d58-1f15-41c6-934f-17ac2381bef7" class="">Keep up to date:</p><ul id="dd709563-b5d7-4d48-86ae-d7fa31309036" class="bulleted-list"><li>Be aware of any evacuation orders and follow them quickly.</li></ul><ul id="8eda0788-bb06-456e-88fc-ef383470261d" class="bulleted-list"><li>Locate the nearest shelter or a safe location in the event of an evacuation.</li></ul><ul id="d9186eda-c603-4681-a0ea-71dfe1fa642d" class="bulleted-list"><li>Listen to the NOAA Weather Radio, EAS, or local authorities for alerts, updates, and information.</li></ul><p id="94279574-cc33-4893-9776-7b8ec5b53fb0" class="">Protect yourself:</p><ul id="486c9299-d874-49e0-8706-d11ffbafff23" class="bulleted-list"><li>Do not drive through flooded areas. Do not drive around barriers. Turn Around. Don&#x27;t Drown.</li></ul><ul id="cba2ee54-c679-4670-a521-70ba822356c7" class="bulleted-list"><li>Do not swim or walk through flooded areas.</li></ul><ul id="f19497f3-0933-4e2b-8ea0-347e610ab44a" class="bulleted-list"><li>Avoid being on bridges above rapidly moving water.</li></ul><ul id="3f6016c5-8527-40d3-bcc7-106be4976508" class="bulleted-list"><li>Get to higher ground if possible.</li></ul><ul id="0d3e4d3c-c076-407d-83a3-25160d974985" class="bulleted-list"><li>Do not park your car along washes, rivers, streams, creeks, etc.</li></ul><ul id="18cb5da8-b636-4e35-8e80-3a9293fcc8eb" class="bulleted-list"><li>Be very aware and cautious if you have to go out at night, since flood dangers aren&#x27;t as recognizable.</li></ul><p id="6c356809-2a14-430b-8b66-951f79f15fbd" class="">In the event you are trapped:</p><ul id="9208ac49-be20-4adf-a777-10c2d3a7e77b" class="bulleted-list"><li>In a building: get to a higher floor, if not the highest floor, of the building. Don&#x27;t enclose yourself in a room/attic since the water can continue to rise. If it is absolutely necessary, go to the roof and signal for help.</li></ul><ul id="a452d228-0ed2-4863-97e3-2f32219d8293" class="bulleted-list"><li>In a car: if your car is being swept away by fast moving waters, do not try to open doors or windows to escape since it can allow water to flood the inside of your vehicle. If water begins to rise inside the vehicle, utilize access to the roof of the car and get on the roof.</li></ul><hr id="f0a2f41f-6e17-4ab1-8815-49487a7bd448"/><h1 id="67a7cfce-c40b-4cf0-9d9a-39b7e8acbc62" class="">How Can You<mark class="highlight-orange"> Be Safe After </mark>a Flood?</h1><p id="1fb343d0-3169-4930-812e-f9ba2ec4331a" class="">Keep up to date:</p><ul id="f458d55d-1bd1-4380-a879-13cbf5ff2385" class="bulleted-list"><li>Listen to radio and local authorities for updates and information. If you have been evacuated, listen to when it is safe to return home.</li></ul><ul id="98602f54-01d3-486a-a899-1a03fa91d61f" class="bulleted-list"><li>Connect with family and friends and check in with them.</li></ul><p id="c17ed0c8-9545-43a2-89a5-a4f98595a8c4" class="">Be cautious:</p><ul id="d1e2d493-ace2-4aa2-87bf-d6c042604196" class="bulleted-list"><li>Be aware of any animals or debris that could have flowed into your house.</li></ul><ul id="23ec9397-3915-4ed9-a6c5-08141d7ff03a" class="bulleted-list"><li>Wear protective clothing to protect yourself during cleanup from animals and debris.</li></ul><ul id="3c133f45-0763-4df7-b3c5-49fd1d5c3cb6" class="bulleted-list"><li>Be aware of electrocution and avoid touching wet or exposed electrical equipment if you are in water. Turn off the electricity if it is safe to do so. If you use a generator, keep the generator outside and away from windows.</li></ul><ul id="34c74d38-2982-48f5-9a2c-6f41d2ca066d" class="bulleted-list"><li>Avoid driving unless if it is an emergency.</li></ul><ul id="81e7fe31-fbe9-4661-8219-d6c878a4650d" class="bulleted-list"><li>Avoid wading in water because it can contain debris and chemicals. In some cases, water can be electrified to downed power wires.</li></ul></div></article></body></html>
